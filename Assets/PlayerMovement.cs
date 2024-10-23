@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+   [SerializeField] float movementSpeed = 6f;
+   [SerializeField] float jumpforce = 5f; 
    
     // Start is called before the first frame update
     void Start()
@@ -18,11 +20,11 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizonal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector3(horizontalInput * 5f, rb.velocity.y, verticalInput * 5f )
+        rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
         if  (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector3(rb.velocity.x, 5f, rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x, jumpforce, rb.velocity.z);
         }
 
 
