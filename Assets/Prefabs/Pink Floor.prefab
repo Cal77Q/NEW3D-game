@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 48002848225196021}
   - component: {fileID: 4670528198929124545}
   - component: {fileID: 1635183789740302082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pink Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
