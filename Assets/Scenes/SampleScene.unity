@@ -602,6 +602,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1399951920869396694, guid: 1b15a18453072534ea83c222575d0258, type: 3}
       insertIndex: -1
       addedObject: {fileID: 822560814}
+    - targetCorrespondingSourceObject: {fileID: 1399951920869396694, guid: 1b15a18453072534ea83c222575d0258, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 822560818}
   m_SourcePrefab: {fileID: 100100000, guid: 1b15a18453072534ea83c222575d0258, type: 3}
 --- !u!1 &822560810 stripped
 GameObject:
@@ -623,7 +626,19 @@ MonoBehaviour:
   waypoints:
   - {fileID: 277198354}
   - {fileID: 724938646}
-  speed: 5
+  speed: 8
+--- !u!114 &822560818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822560810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625b0dc769b9f9945a49c6676a9cbf6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
