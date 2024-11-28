@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        myAnim.SetTrigger("jumped");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -83,7 +84,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = new Vector3(moveDirection.x * movementSpeed, rb.velocity.y, moveDirection.z * movementSpeed);
         rb.velocity = targetVelocity;
 
-        myAnim.SetFloat("speed", moveDirection.magnitude);
+        myAnim.SetFloat("Speed", moveDirection.magnitude);
+        myAnim.SetBool("isOnGround", isActiveAndEnabled);
+       
 
     }
 }
