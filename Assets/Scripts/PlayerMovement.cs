@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
+
+    Animator myAnim;
 
     [SerializeField] float movementSpeed = 6f;
     [SerializeField] float jumpForce = 5f;
@@ -25,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+
+        myAnim = GetComponentInChildren<Animator>();
+        
     }
 
     void Update()
@@ -41,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
         // Check if grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, ground);
+
+       
 
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -74,5 +82,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
         Vector3 targetVelocity = new Vector3(moveDirection.x * movementSpeed, rb.velocity.y, moveDirection.z * movementSpeed);
         rb.velocity = targetVelocity;
+
+        myAnim.SetFloat("speed", moveDirection.magnitude);
+
     }
 }
