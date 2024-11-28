@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         // Check if grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, ground);
 
-       
+        myAnim.SetBool("isOnGround", isActiveAndEnabled);
 
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = targetVelocity;
 
         myAnim.SetFloat("Speed", moveDirection.magnitude);
-        myAnim.SetBool("isOnGround", isActiveAndEnabled);
+        
        
 
     }
